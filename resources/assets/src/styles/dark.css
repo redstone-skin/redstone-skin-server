@@ -1,0 +1,124 @@
+/** Restone Dark Theme */
+
+* {
+  transition: background-color 0.4s;
+}
+
+.dark-mode {
+  background-color: #1f1f1f !important;
+}
+
+.dark-mode .main-sidebar {
+  background-color: #1f1f1f;
+}
+
+.dark-mode .navbar-danger {
+  background-color: #1f1f1f !important;
+}
+
+.dark-mode .content-wrapper {
+  background-color: #292929 !important;
+}
+
+.dark-mode .main-footer {
+  background-color: #292929 !important;
+}
+
+.dark-mode .card {
+  background-color: #1b1b1b !important;
+}
+
+.dark-mode .card-primary:not(.card-outline) > .card-header {
+  background-color: #1b1b1b !important;
+}
+
+.dark-mode .small-box {
+  background-color: #1b1b1b !important;
+  color: rgba(255, 255, 255, 0.795) !important;
+}
+
+.dark-mode .bg-info {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #3498db;
+}
+
+.dark-mode .bg-green {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #00bc8c;
+}
+
+.dark-mode .bg-purple {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #6f42c1;
+}
+
+.dark-mode .bg-yellow {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f39c12;
+}
+
+.dark-mode .small-box .icon {
+  color: rgb(166 166 166 / 52%) !important;
+}
+
+.dark-mode .dropdown-menu {
+  background-color: #1b1b1b !important;
+}
+
+.dark-mode .info-box {
+  background-color: #292929 !important;
+  color: white !important;
+}
+
+.dark-mode .bg-gradient-primary.btn {
+  background-color: transparent !important;
+  border-style: solid;
+  border-width: 1.6px;
+  border-color: #3498db;
+}
+
+.dark-mode .bg-gradient-primary.btn:hover {
+  background-color: transparent !important;
+  border-style: solid;
+  border-width: 1.6px;
+  border-color: #3498db;
+  box-shadow: #3498db 1px 1px 8px;
+}
+
+.dark-mode .callout {
+  background-color: #1b1b1b !important;
+}
+
+.dark-mode .card-body {
+  background-color: #1b1b1b !important;
+}
+
+.dark-mode .custom-control-label::before,
+.dark-mode .custom-file-label,
+.dark-mode .custom-file-label::after,
+.dark-mode .custom-select,
+.dark-mode .form-control:not(.form-control-navbar):not(.form-control-sidebar),
+.dark-mode .input-group-text {
+  background-color: #1b1b1b !important;
+}
+
+.dark-mode .overlay {
+  background-color: rgb(19 19 19 / 70%) !important;
+}
+
+.dark-mode .page-item.disabled .page-link,
+.dark-mode .page-item.disabled a {
+  background-color: transparent !important;
+}
+
+.dark-mode .page-item.active .page-link {
+  background-color: #1b1b1b !important;
+}
+
+.dark-mode .page-item:not(.active) .page-link {
+  background-color: #1b1b1b !important;
+}

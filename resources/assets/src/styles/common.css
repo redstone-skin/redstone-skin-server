@@ -3,6 +3,7 @@
 @import './dropdown.css';
 @import './auth.css';
 @import './admin.css';
+@import './dark.css';
 
 a {
   outline: none;
