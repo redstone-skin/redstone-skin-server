@@ -1,5 +1,5 @@
 {
-  "name": "bs-community/blessing-skin-server",
+  "name": "redstone-skin/redstone-skin-server",
   "description": "A web application brings your custom skins back in offline Minecraft servers.",
   "license": "MIT",
   "require": {
