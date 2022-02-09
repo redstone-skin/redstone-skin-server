@@ -7,6 +7,7 @@ import { t } from '@/scripts/i18n'
 import * as cssUtils from '@/styles/utils'
 import * as breakpoints from '@/styles/breakpoints'
 import SkinSteve from '../../../misc/textures/steve.png'
+import SkinBlank from '../../../misc/textures/blank.png'
 import bg1 from '../../../misc/backgrounds/1.webp'
 import bg2 from '../../../misc/backgrounds/2.webp'
 import bg3 from '../../../misc/backgrounds/3.webp'
@@ -119,6 +120,7 @@ const Viewer: React.FC<Props> = (props) => {
     const viewer = viewRef.current
     if (props.cape) {
       viewer.loadCape(props.cape)
+      viewer.loadSkin(SkinBlank, 'default')
     } else {
       viewer.resetCape()
     }

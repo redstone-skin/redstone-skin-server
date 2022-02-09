@@ -17,7 +17,8 @@
     "fmt:check": "prettier --check resources/assets tools webpack.config.ts",
     "type:check": "tsc -p . --noEmit && tsc -p ./resources/assets/tests --noEmit",
     "test": "jest",
-    "build:urls": "ts-node tools/generateUrls.ts"
+    "build:urls": "ts-node tools/generateUrls.ts",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@emotion/react": "^11.0.0",
@@ -82,8 +83,10 @@
     "jquery": "^3.5.1",
     "js-yaml": "^3.13.1",
     "mini-css-extract-plugin": "^1.6.0",
+    "patch-package": "^6.4.7",
     "postcss": "^8.3.0",
     "postcss-loader": "^5.3.0",
+    "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.3.0",
     "style-loader": "^2.0.0",
     "ts-jest": "^27.0.2",

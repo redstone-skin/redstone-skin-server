@@ -1,0 +1,15 @@
+diff --git a/node_modules/skinview3d/libs/model.js b/node_modules/skinview3d/libs/model.js
+index 3fe5bcc..c4de018 100644
+--- a/node_modules/skinview3d/libs/model.js
++++ b/node_modules/skinview3d/libs/model.js
+@@ -48,7 +48,9 @@ export class SkinObject extends Group {
+         this.slim = false;
+         const layer1Material = new MeshStandardMaterial({
+             map: texture,
+-            side: FrontSide
++            side: FrontSide,
++            transparent: true,
++            alphaTest: 1e-5
+         });
+         const layer2Material = new MeshStandardMaterial({
+             map: texture,
