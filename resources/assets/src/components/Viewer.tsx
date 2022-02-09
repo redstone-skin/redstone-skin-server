@@ -120,7 +120,9 @@ const Viewer: React.FC<Props> = (props) => {
     const viewer = viewRef.current
     if (props.cape) {
       viewer.loadCape(props.cape)
-      viewer.loadSkin(SkinBlank, 'default')
+      if (!props.skin) {
+        viewer.loadSkin(SkinBlank, 'default')
+      }
     } else {
       viewer.resetCape()
     }
