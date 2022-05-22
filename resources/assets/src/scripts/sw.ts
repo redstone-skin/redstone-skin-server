@@ -52,9 +52,9 @@ registerRoute(
 
 //#region jsDelivr
 registerRoute(
-  /.*cdn\.jsdelivr\.net/,
+  /.*unpkg\.mcskin\.cn/,
   new CacheFirst({
-    cacheName: 'jsdelivr-v1',
+    cacheName: 'unpkg-mcskin-v1',
     fetchOptions: {
       credentials: 'omit',
       mode: 'cors',

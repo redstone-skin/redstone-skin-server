@@ -12,10 +12,10 @@
 {% endif %}
 <script id="blessing-globals" type="application/json">{{ blessing|json_encode|raw }}</script>
 <script src="{{ url('/meta.js') }}"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css" integrity="sha256-FQ+k0mIFfWXVTaW1arh3qKx8IXX5Bm5f6QG+0pkUjaE=" crossorigin>
-<link rel="preload" as="font" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/webfonts/fa-solid-900.woff2" crossorigin>
-<link rel="preload" as="font" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/webfonts/fa-regular-400.woff2" crossorigin>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin>
+<link rel="stylesheet" href="https://unpkg.mcskin.cn/admin-lte@3.1.0/dist/css/adminlte.min.css" integrity="sha256-FQ+k0mIFfWXVTaW1arh3qKx8IXX5Bm5f6QG+0pkUjaE=" crossorigin>
+<link rel="preload" as="font" href="https://unpkg.mcskin.cn/@fortawesome/fontawesome-free@5.13.0/webfonts/fa-solid-900.woff2" crossorigin>
+<link rel="preload" as="font" href="https://unpkg.mcskin.cn/@fortawesome/fontawesome-free@5.13.0/webfonts/fa-regular-400.woff2" crossorigin>
+<link rel="stylesheet" href="https://unpkg.mcskin.cn/@fortawesome/fontawesome-free@5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin>
 {{ include('assets.style', ignore_missing = true) }}
 {% for link in links %}
   <link{% for attribute, value in link %} {{ attribute }}="{{ value|raw }}"{% endfor %}>
