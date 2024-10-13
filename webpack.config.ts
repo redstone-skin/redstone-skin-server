@@ -74,8 +74,8 @@ export default function (env?: Env): webpack.Configuration[] {
           templateContent: isDev
             ? ''
             : `
-<script src="https://unpkg.mcskin.cn/react@17.0.1/umd/react.production.min.js" integrity="sha256-Ag0WTc8xFszCJo1qbkTKp3wBMdjpjogsZDAhnSge744=" crossorigin></script>
-<script src="https://unpkg.mcskin.cn/react-dom@17.0.1/umd/react-dom.production.min.js" integrity="sha256-k8tzaSH8ucPwbsHEO4Wk5szE9zERNVz3XQynfyT66O0=" crossorigin></script>`,
+<script src="/static/js/react.production.min.js" integrity="sha256-Ag0WTc8xFszCJo1qbkTKp3wBMdjpjogsZDAhnSge744=" crossorigin></script>
+<script src="/static/js/react-dom.production.min.js" integrity="sha256-k8tzaSH8ucPwbsHEO4Wk5szE9zERNVz3XQynfyT66O0=" crossorigin></script>`,
           chunks: ['app'],
           scriptLoading: 'blocking',
           filename: 'app.twig',
