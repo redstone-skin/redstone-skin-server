@@ -76,7 +76,13 @@ class ViewServiceProvider extends ServiceProvider
         });
 
         View::composer('assets.*', function ($view) {
-            $view->with('cdn_base', option('cdn_address', ''));
+            // Keep compiled frontend assets on the application origin when
+            // MC_SKIN_LOCAL_ASSETS is enabled (useful for self-contained
+            // deployments where the legacy OSS CDN is unavailable).
+            $cdnBase = filter_var(env('MC_SKIN_LOCAL_ASSETS', false), FILTER_VALIDATE_BOOLEAN)
+                ? ''
+                : option('cdn_address', '');
+            $view->with('cdn_base', $cdnBase);
         });
     }
 }
