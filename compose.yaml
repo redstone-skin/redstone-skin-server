@@ -1,0 +1,75 @@
+name: mcskin-migration
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: mcskin
+      POSTGRES_USER: mcskin
+      POSTGRES_PASSWORD: mcskin-local-only
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mcskin -d mcskin"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  mysql-source:
+    profiles: ["migration"]
+    image: mysql:5.7
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --max-allowed-packet=256M
+    environment:
+      MYSQL_DATABASE: mcskin_cn
+      MYSQL_ROOT_PASSWORD: mysql-local-only
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -pmysql-local-only --silent"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    volumes:
+      - mysql-source-data:/var/lib/mysql
+      - ./.migration:/migration:ro
+
+  mcskin:
+    build:
+      context: .
+      target: runtime
+    environment:
+      APP_DEBUG: "false"
+      APP_ENV: production
+      APP_INSTALLED: "true"
+      APP_KEY: base64:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+      APP_URL: http://localhost:8080
+      CACHE_DRIVER: file
+      DB_CONNECTION: pgsql
+      DB_DATABASE: mcskin
+      DB_HOST: postgres
+      DB_PASSWORD: mcskin-local-only
+      DB_PORT: "5432"
+      DB_USERNAME: mcskin
+      QUEUE_CONNECTION: sync
+      SESSION_DRIVER: file
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: ["nginx", "-g", "daemon off;"]
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./docker/nginx.compose.conf:/etc/nginx/conf.d/default.conf:ro
+      - app-storage:/var/www/html/storage
+      - app-plugins:/var/www/html/plugins
+      - public-lang:/var/www/html/public/lang:ro
+      - public-plugins:/var/www/html/public/plugins:ro
+
+volumes:
+  app-plugins:
+  app-storage:
+  postgres-data:
+  public-lang:
+  public-plugins:
+  mysql-source-data:

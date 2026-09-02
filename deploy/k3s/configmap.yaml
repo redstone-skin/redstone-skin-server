@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mcskin-config
+  namespace: mcskin-migration
+data:
+  APP_DEBUG: "false"
+  APP_ENV: production
+  APP_FALLBACK_LOCALE: en
+  APP_INSTALLED: "true"
+  APP_URL: https://mcskin.cn
+  CACHE_DRIVER: file
+  DB_CONNECTION: pgsql
+  DB_HOST: pgm-2vc890l1r0e02s32.pgsql.cn-chengdu.rds.aliyuncs.com
+  DB_PORT: "5432"
+  DB_SCHEMA: mcskin_cn
+  QUEUE_CONNECTION: sync
+  SESSION_DRIVER: file

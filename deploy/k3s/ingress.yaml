@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mcskin
+  namespace: mcskin-migration
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - mcskin.cn
+        - mcskin.com.cn
+      secretName: mcskin-tls
+  rules:
+    - host: mcskin.cn
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mcskin
+                port:
+                  name: http
+    - host: mcskin.com.cn
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mcskin
+                port:
+                  name: http
+

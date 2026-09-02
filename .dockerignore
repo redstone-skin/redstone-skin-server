@@ -3,7 +3,6 @@
 .vscode/
 coverage/
 node_modules/
-plugins/**
 public/app/*
 public/lang/*
 public/plugins/**
@@ -17,7 +16,6 @@ storage/logs/**
 storage/packages/**
 storage/textures/*
 tests/
-tools/
 vendor/
 _ide_helper.php
 .dockerignore
@@ -32,7 +30,6 @@ _ide_helper.php
 azure-pipelines.yml
 crowdin.yml
 docker-compose.yml
-*.Dockerfile
 index.html
 phpunit.xml
 README*.md

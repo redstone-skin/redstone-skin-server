@@ -1,0 +1,31 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mcskin-migrate
+  namespace: mcskin-migration
+spec:
+  backoffLimit: 1
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrate
+          image: ghcr.io/example/redstone-skin-server-app:b69faa4d
+          command: ["php", "artisan", "migrate", "--force"]
+          envFrom:
+            - configMapRef:
+                name: mcskin-config
+            - secretRef:
+                name: mcskin-secrets
+          volumeMounts:
+            - name: data
+              mountPath: /var/www/html/storage
+              subPath: storage
+            - name: data
+              mountPath: /var/www/html/plugins
+              subPath: plugins
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: mcskin-data
+

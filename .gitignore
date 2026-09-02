@@ -25,6 +25,7 @@ storage/install.lock
 storage/options.php
 .phpunit.result.cache
 .php-cs-fixer.cache
+.migration/
 resources/views/overrides
 public/sw.js
 public/meta.js

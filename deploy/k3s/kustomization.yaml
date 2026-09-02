@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - namespace.yaml
+  - configmap.yaml
+  - pvc.yaml
+  - deployment.yaml
+  - service.yaml
+images:
+  - name: ghcr.io/example/redstone-skin-server-app
+    newName: registry.example.com/mcskin/app
+    newTag: b69faa4d
+  - name: ghcr.io/example/redstone-skin-server-web
+    newName: registry.example.com/mcskin/web
+    newTag: b69faa4d
