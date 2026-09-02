@@ -6,9 +6,6 @@
 <meta name="keywords" content="{{ seo.keywords }}">
 <meta name="description" content="{{ seo.description }}">
 {{ seo.extra|striptags('<meta>')|raw }}
-{% if custom_cdn_host %}
-  <link rel="preconnect" href="{{ custom_cdn_host }}" id="cdn-host" crossorigin>
-{% endif %}
 <script id="blessing-globals" type="application/json">{{ blessing|json_encode|raw }}</script>
 <script src="{{ url('/meta.js') }}"></script>
 <link rel="stylesheet" href="{{ url('/vendor/admin-lte/adminlte.min.css') }}">
