@@ -71,11 +71,7 @@ export default function (env?: Env): webpack.Configuration[] {
           chunkFilename: isDev ? '[id].css' : '[id].[contenthash:7].css',
         }),
         new HtmlWebpackPlugin({
-          templateContent: isDev
-            ? ''
-            : `
-<script src="https://unpkg.mcskin.cn/react@17.0.1/umd/react.production.min.js" integrity="sha256-Ag0WTc8xFszCJo1qbkTKp3wBMdjpjogsZDAhnSge744=" crossorigin></script>
-<script src="https://unpkg.mcskin.cn/react-dom@17.0.1/umd/react-dom.production.min.js" integrity="sha256-k8tzaSH8ucPwbsHEO4Wk5szE9zERNVz3XQynfyT66O0=" crossorigin></script>`,
+          templateContent: '',
           chunks: ['app'],
           scriptLoading: 'blocking',
           filename: 'app.twig',
@@ -131,10 +127,7 @@ export default function (env?: Env): webpack.Configuration[] {
         { jquery: 'jQuery', bootstrap: 'bootstrap', 'admin-lte': 'adminlte' },
         isDev
           ? {}
-          : {
-              react: 'React',
-              'react-dom': 'ReactDOM',
-            },
+          : {},
       ) as Record<string, string>,
       optimization: {
         // @ts-ignore
