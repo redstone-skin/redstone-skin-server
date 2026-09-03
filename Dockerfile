@@ -61,6 +61,7 @@ COPY . .
 COPY --from=frontend /src/public ./public
 COPY --from=frontend /src/resources/views/assets ./resources/views/assets
 COPY --from=frontend /src/node_modules/@fortawesome/fontawesome-free/webfonts ./public/vendor/fontawesome/webfonts
+COPY resources/assets/src/images/bg.webp ./public/app/bg.webp
 COPY docker/php.ini /usr/local/etc/php/conf.d/99-mcskin.ini
 COPY docker/entrypoint.sh /usr/local/bin/mcskin-entrypoint
 
