@@ -59,6 +59,7 @@ RUN composer install \
 
 COPY . .
 COPY --from=frontend /src/public ./public
+COPY --from=frontend /src/resources/views/assets ./resources/views/assets
 COPY docker/php.ini /usr/local/etc/php/conf.d/99-mcskin.ini
 COPY docker/entrypoint.sh /usr/local/bin/mcskin-entrypoint
 
